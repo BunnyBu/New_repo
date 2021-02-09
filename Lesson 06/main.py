@@ -90,7 +90,7 @@ class Position(Worker):
 
 
 class Car:
-    def __init__(self, speed: int, color: str, name: str, is_police: bool = False):
+    def __init__(self, color: str, name: str, is_police: bool = False):
         self.speed = 0
         self.color = color
         self.name = name
@@ -133,9 +133,50 @@ class PoliceCar(Car):
     pass
 
 
-my_car = TownCar(70,'Зелёный', 'УАЗ', False)
-my_car.go()
-my_car.show_speed()
-my_car.go()
-my_car.show_speed()
+# my_car = TownCar('Зелёный', 'УАЗ', False)
+# print(my_car.name)
+# my_car.go()
+# my_car.show_speed()
+# my_car.go()
+# my_car.show_speed()
+#
+# print("_____")
+# work_car = WorkCar('Оранжевый', 'CAT', False)
+# print(work_car.name)
+# work_car.show_speed()
+# work_car.go()
+# work_car.show_speed()
 
+"""5. Реализовать класс Stationery (канцелярская принадлежность). 
+Определить в нем атрибут title (название) и метод draw (отрисовка). Метод выводит сообщение “Запуск отрисовки.” 
+Создать три дочерних класса Pen (ручка), Pencil (карандаш), Handle (маркер). 
+В каждом из классов реализовать переопределение метода draw. Для каждого из классов методы должен выводить уникальное сообщение. 
+Создать экземпляры классов и проверить, что выведет описанный метод для каждого экземпляра."""
+
+class Stationery():
+    def __init__(self, title: str):
+        self.title = title
+
+    def draw(self):
+        print("рисуем")
+
+class Pen(Stationery):
+    def draw(self):
+        print("Пишем ручкой")
+
+class Pencil(Stationery):
+    def draw(self):
+        print("Пишем карандашом")
+
+class Handle(Stationery):
+    def draw(self):
+        print("Пишем маркером")
+
+
+# pen = Pen("Parker")
+# pencil = Pencil("KOH-I-NOOR")
+# handle = Handle("Uni Mitsubishi")
+#
+# pen.draw()
+# pencil.draw()
+# handle.draw()
